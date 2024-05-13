@@ -4,4 +4,4 @@ steps:
 images:
 - 'us.gcr.io/kloud4gcpdevops/yugansethu:$COMMIT_SHA'
 - 'us.gcr.io/kloud4gcpdevops/yugansethu:latest'
-timeout: 3600s
+timeout: 3655s
