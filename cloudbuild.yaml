@@ -1,4 +1,7 @@
 steps:
-  - name: gcr.io/cloud-builders/docker
-    args: ["build", "-t", "us-central1-docker.pkg.dev/kloud4gcpdevops/yugansethu/gcpcloud:v1", "--build-arg=JAR_FILE=kloud4devops-0.0.1-SNAPSHOT.jar", "."]
-images: ["us-central1-docker.pkg.dev/kloud4gcpdevops/kloud4academy/yugansethu/gcpcloud:v1"]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'us.gcr.io/kloud4gcpdevops/yugansethu:$COMMIT_SHA', '-t', 'us.gcr.io/kloud4gcpdevops/yugansethu:latest',"--build-arg=JAR_FILE=kloud4devops-0.0.1-SNAPSHOT.jar", '.' ]
+images:
+- 'us.gcr.io/kloud4gcpdevops/yugansethu:$COMMIT_SHA'
+- 'us.gcr.io/kloud4gcpdevops/yugansethu:latest'
+timeout: 3600s
