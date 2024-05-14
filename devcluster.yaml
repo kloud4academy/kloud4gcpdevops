@@ -6,6 +6,4 @@ metadata:
   labels: {}
 description: dev
 gke:
-  cluster: projects/kloud4gcpdevops/locations/us-central1/targets/dev
-  
-#  projects/kloud4gcpdevops/locations/us-central1/clusters/kloud4acdmy-devops
+  cluster: projects/kloud4gcpdevops/locations/us-central1/clusters/kloud4acdmy-devops
