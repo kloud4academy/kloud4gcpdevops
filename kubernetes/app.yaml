@@ -1,32 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app1
+  name: gcpk-servic
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: my-app1
+      run: gcpk-servic
   template:
     metadata:
       labels:
-        app: my-app1
+        run: gcpk-servic
     spec:
       containers:
-        - name: my-container
-          image: us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1
-          ports:
-            - containerPort: 8080
+      - name: gcpk-servic
+        image: us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1
+        ports:
+        - containerPort: 8080
+          name: http
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service1
+  name: gcpk-servic
+  labels:
+    run: gcpk-servic
 spec:
-  selector:
-    app: my-app1
   ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
+  - port: 8080
+    protocol: TCP
   type: LoadBalancer
+  selector:
+    run: gcpk-servic
