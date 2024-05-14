@@ -1,9 +1,10 @@
 apiVersion: deploy.cloud.google.com/v1
-kind: Target
+kind: DeliveryPipeline
 metadata:
-  name: dev
-  annotations: {}
-  labels: {}
+  name: gkecicd-pipeline
+  labels:
+   app: cicd
 description: dev
-gke:
-  cluster: projects/kloud4gcpdevops/locations/us-central1/clusters/kloud4acdmy-devops
+serialPipeline:
+  statges:
+  - targetId: dev

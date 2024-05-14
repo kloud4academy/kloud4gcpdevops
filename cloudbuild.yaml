@@ -13,6 +13,7 @@ steps:
   - -c
   - |
     gcloud deploy apply --file devcluster.yaml --region=us-central1
-    gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=demo-btegbij --region=us-central1 --skaffold-file=skaffold.yaml
+    gcloud deploy apply --file dev.yaml --region=us-central1
+    gcloud deploy releases create 'app-release-${SHORT_SHA}' --delivery-pipeline=gkecicd-pipeline --region=us-central1 --from-k8s-manifes=./kuberntes/app.yaml
 options:
   logging: CLOUD_LOGGING_ONLY
