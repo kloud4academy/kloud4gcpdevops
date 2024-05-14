@@ -1,9 +1,9 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
-  name: dev
-  annotations: {}
-  labels: {}
+ name: dev
+ annotations: {}
+ labels: {}
 description: dev
 gke:
-  cluster: projects/kloud4cidepipeline/locations/us-central1/clusters/qa-cluster-1
+ cluster: projects/kloud4cidepipeline/locations/us-central1/clusters/qa-cluster-1
