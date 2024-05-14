@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-container
-          image: us.gcr.io/kloud4gcpdevops/yugansethu:latest
+          image: us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1
           ports:
             - containerPort: 8080
 ---

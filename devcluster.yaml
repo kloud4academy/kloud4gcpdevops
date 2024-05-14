@@ -8,3 +8,4 @@ description: dev
 serialPipeline:
   statges:
   - targetId: dev
+  - targetId: prod
