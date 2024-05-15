@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gcpk-servic
-        image: us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1
+        image: us.gcr.io/kloud4academydevops/yugansethu/gcpcloud:v1
         ports:
         - containerPort: 8080
           name: http
