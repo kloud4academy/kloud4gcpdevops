@@ -14,4 +14,4 @@ metadata:
   name: dev
 description: dev GKE cluster
 gke:
- cluster: projects/kloud4cidepipeline/locations/us-central1/clusters/qa-cluster-1
+ cluster: projects/kloud4academydevops/locations/us-central1/clusters/kloud4academy-cluster

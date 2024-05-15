@@ -1,10 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ["build", "-t", "us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1", "--build-arg=JAR_FILE=kloud4devops-0.0.1-SNAPSHOT.jar", "."]
+  args: ["build", "-t", "us.gcr.io/kloud4academydevops/yugansethu/gcpcloud:v1", "--build-arg=JAR_FILE=kloud4devops-0.0.1-SNAPSHOT.jar", "."]
   id: 'Build Docker Image'
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us.gcr.io/kloud4cidepipeline/yugansethu/gcpcloud:v1' ]
+  args: ['push', 'us.gcr.io/kloud4academydevops/yugansethu/gcpcloud:v1' ]
   id: 'Push Docker Image'
   
 - name: 'google/cloud-sdk:latest'
