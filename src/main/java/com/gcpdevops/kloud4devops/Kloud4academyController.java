@@ -24,33 +24,33 @@ public class Kloud4academyController {
 	@Autowired
 	private ClientService apiServiceManager;
 
-	@RequestMapping(value={"/fetchProductsUsingCategory/{categoryId}","/fetchProductsUsingCategory/fetchProductsUsingCategory/{categoryId}","/fetchProductsUsingCategory/fetchProductsUsingCategory/fetchProductsUsingCategory/{categoryId}"},method = RequestMethod.GET)
-	public ModelAndView fetchProductsUsingCategory(@PathVariable String categoryId) {
-		logger.info("------------Product List controller called"+categoryId);
-		ModelAndView mv = null;
-		List<ProductEntity> productsData = apiServiceManager.fetchProductsByCategory(categoryId);
-		logger.info("ProductResponse" +productsData);
-		List<ProductDataBean> productList = new ArrayList<ProductDataBean>();
-		if(productsData != null) {
-			for (Object product : productsData) {
-				ProductEntity productEntity = (ProductEntity)product;
-				ProductDataBean productDataBean = new ProductDataBean();
-				productDataBean.setCategory(productEntity.getCategory());
-				productDataBean.setImageURL(productEntity.getImageURL());
-				productDataBean.setPrice(productEntity.getPrice());
-				productDataBean.setProductDesc(productEntity.getProductDesc());
-				productDataBean.setProductId(productEntity.getProductId());
-				productDataBean.setProductName(productEntity.getProductName());
-				productDataBean.setProductType(productEntity.getProductType());
-				productList.add(productDataBean);
-			}
-		}
-		
-		mv = new ModelAndView();
-		mv.addObject("productsData", productList);
-		mv.setViewName("homepage");
-		return mv;
-	}
+//	@RequestMapping(value={"/fetchProductsUsingCategory/{categoryId}","/fetchProductsUsingCategory/fetchProductsUsingCategory/{categoryId}","/fetchProductsUsingCategory/fetchProductsUsingCategory/fetchProductsUsingCategory/{categoryId}"},method = RequestMethod.GET)
+//	public ModelAndView fetchProductsUsingCategory(@PathVariable String categoryId) {
+//		logger.info("------------Product List controller called"+categoryId);
+//		ModelAndView mv = null;
+//		List<ProductEntity> productsData = apiServiceManager.fetchProductsByCategory(categoryId);
+//		logger.info("ProductResponse" +productsData);
+//		List<ProductDataBean> productList = new ArrayList<ProductDataBean>();
+//		if(productsData != null) {
+//			for (Object product : productsData) {
+//				ProductEntity productEntity = (ProductEntity)product;
+//				ProductDataBean productDataBean = new ProductDataBean();
+//				productDataBean.setCategory(productEntity.getCategory());
+//				productDataBean.setImageURL(productEntity.getImageURL());
+//				productDataBean.setPrice(productEntity.getPrice());
+//				productDataBean.setProductDesc(productEntity.getProductDesc());
+//				productDataBean.setProductId(productEntity.getProductId());
+//				productDataBean.setProductName(productEntity.getProductName());
+//				productDataBean.setProductType(productEntity.getProductType());
+//				productList.add(productDataBean);
+//			}
+//		}
+//		
+//		mv = new ModelAndView();
+//		mv.addObject("productsData", productList);
+//		mv.setViewName("homepage");
+//		return mv;
+//	}
 	
 	@GetMapping({"/home","/"})
 	public ModelAndView directHomePage() {
