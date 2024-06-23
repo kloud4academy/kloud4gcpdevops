@@ -17,7 +17,7 @@ pipeline {
 
         stage('Test Chrome') {
           steps {
-            echo 'Testing Chrome'
+            echo 'Testing Chrome;exit:0'
           }
         }
 
