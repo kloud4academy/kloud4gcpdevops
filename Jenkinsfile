@@ -27,7 +27,7 @@ stage('Test Chrome111') {
       }
     }
 
-    stage('Deploy') {
+    stage('Deploy111111') {
       steps {
         echo 'Deploy'
       }
