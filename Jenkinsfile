@@ -11,20 +11,13 @@ pipeline {
 
         stage('Test Firebox') {
           steps {
-            sh '''echo "Testing Firebox"
-'''
+            echo 'Testing FireBox'
           }
         }
 
         stage('Test Chrome') {
           steps {
-            sh 'echo "Testing Chrome"'
-          }
-        }
-
-        stage('Test Edg') {
-          steps {
-            sh 'echo "Test Edg"'
+            echo 'Testing Chrome'
           }
         }
 
